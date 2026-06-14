@@ -56,7 +56,7 @@ function crawlerInviteHtml(roomId) {
 <meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:width" content="${OG_W}" />
 <meta property="og:image:height" content="${OG_H}" />
-<meta property="og:image:alt" content="ChessBird — social voice chess with friends, together." />
+<meta property="og:image:alt" content="ChessBird — voice chess with friends, together." />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${t}" />
 <meta name="twitter:description" content="${d}" />

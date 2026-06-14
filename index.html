@@ -3,12 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ChessBird | Play chess like you're sitting together</title>
+    <title>ChessBird — Play Chess With Friends Online | Voice Chat Chess App</title>
     <meta
       name="description"
-      content="ChessBird is a social voice-enabled chess app for friends to play remotely, talk in real time, and feel present together."
+      content="ChessBird is a premium chess app for Android. Play chess with friends online, use voice chat while you play, and join private chess rooms that feel like you're sitting together."
     />
-    <meta name="theme-color" content="#0F0A2A" />
+    <meta
+      name="keywords"
+      content="play chess with friends, online chess with friends, chess voice chat, social chess app, multiplayer chess app, private chess rooms, voice-enabled chess"
+    />
+    <meta name="theme-color" content="#06050A" />
     <meta name="apple-mobile-web-app-title" content="ChessBird" />
     <meta name="application-name" content="ChessBird" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -18,78 +22,193 @@
     <meta property="og:title" content="ChessBird | Play chess like you're sitting together" />
     <meta
       property="og:description"
-      content="ChessBird is a social voice-enabled chess app for friends to play remotely, talk in real time, and feel present together."
+      content="Play chess with friends online. Voice chat, private rooms, and a beautiful board — ChessBird brings chess with friends to Android."
     />
     <meta property="og:image" content="https://chessbird.app/assets/branding/og-image.jpg" />
     <meta property="og:image:secure_url" content="https://chessbird.app/assets/branding/og-image.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="ChessBird — social voice chess with friends, together." />
+    <meta property="og:image:alt" content="ChessBird — voice chess with friends, together." />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ChessBird | Play chess like you're sitting together" />
     <meta
       name="twitter:description"
-      content="ChessBird is a social voice-enabled chess app for friends to play remotely, talk in real time, and feel present together."
+      content="Play chess with friends online. Voice chat, private rooms, and a beautiful board — ChessBird brings chess with friends to Android."
     />
     <meta name="twitter:image" content="https://chessbird.app/assets/branding/og-image.jpg" />
     <link rel="canonical" href="https://chessbird.app/" />
-    <!-- Google Analytics 4 (GA4) placeholder setup: replace G-XXXXXXXXXX with your real Measurement ID before go-live. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" href="https://chessbird.app/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="96x96" href="https://chessbird.app/assets/branding/favicon-96x96.png" />
     <link rel="apple-touch-icon" href="https://chessbird.app/assets/branding/apple-touch-icon.png" />
     <link rel="manifest" href="https://chessbird.app/site.webmanifest" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/site-config.js"></script>
+    <script src="js/gtag-init.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://chessbird.app/#organization",
+            "name": "ChessBird",
+            "url": "https://chessbird.app/",
+            "logo": "https://chessbird.app/assets/logo/logo.svg",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "url": "https://chessbird.app/contact.html"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://chessbird.app/#website",
+            "url": "https://chessbird.app/",
+            "name": "ChessBird",
+            "description": "Voice-enabled chess app for playing with friends online.",
+            "publisher": { "@id": "https://chessbird.app/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "ChessBird",
+            "operatingSystem": "Android",
+            "applicationCategory": "GameApplication",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "downloadUrl": "https://play.google.com/store/apps/details?id=com.chessbird.app"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is ChessBird free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. ChessBird is free to download and play."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I play chess with friends online?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Create a private game room, send an invite, and start playing together from anywhere."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I talk while playing ChessBird?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Voice chat is built into online games, so you can talk while you play."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I play offline?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. ChessBird includes offline play, so you can enjoy a game even without an internet connection."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are games private?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Games are invite-only, so you choose exactly who you play with."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is ChessBird available on Android?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. ChessBird is available on Android through the Google Play Store."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html" aria-label="ChessBird home">
-          <img src="assets/logo/logo.svg" alt="ChessBird logo" width="36" height="36" />
+          <img src="assets/logo/logo.svg" alt="" width="36" height="36" />
           <span>ChessBird</span>
         </a>
-        <nav class="site-nav" aria-label="Site">
-          <a href="index.html" aria-current="page">Website</a>
-          <a href="contact.html">Contact Us</a>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Open menu"
+        >
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Site">
+          <a href="index.html" aria-current="page">Home</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
+          <a href="contact.html">Contact</a>
+          <a
+            class="site-nav__cta btn-play-store btn-play-store--compact"
+            href="early-access/"
+            data-analytics="join_early_access_click"
+          >
+            Join Early Access
+          </a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="hero section">
+    <main id="main-content">
+      <!-- Hero -->
+      <section class="hero section" aria-labelledby="hero-heading">
+        <div class="hero-glow" aria-hidden="true"></div>
         <div class="container hero-grid">
-          <div>
-            <p class="eyebrow">Voice-Enabled Chess App</p>
-            <h1>Play chess like you're sitting together.</h1>
-            <p class="tagline">
-              ChessBird brings friends into the same game room from anywhere. Start a private room,
-              talk live while you play, and keep the experience simple, fast, and personal.
+          <div class="hero-copy">
+            <p class="eyebrow">Voice chess with friends for Android</p>
+            <h1 id="hero-heading">Play chess like you're sitting together</h1>
+            <p class="hero-lede">
+              ChessBird is a voice-enabled chess app built for friends. Create a private room,
+              invite someone you trust, and play with real conversation — not just moves on a screen.
             </p>
-            <a
-              class="playstore-btn"
-              href="https://play.google.com/store/apps/details?id=com.example.chessbird"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Start playing together on Google Play"
-            >
-              Start playing together
-            </a>
+            <ul class="hero-points" aria-label="Key features">
+              <li>Voice chat while you play</li>
+              <li>Private invite-only rooms</li>
+              <li>Play with friends from anywhere</li>
+            </ul>
+            <div class="hero-actions">
+              <a
+                class="btn-play-store"
+                href="early-access/"
+                data-analytics="join_early_access_click"
+                aria-label="Join ChessBird early access"
+              >
+                <span class="btn-play-store__store">Join Early Access Now</span>
+              </a>
+              <p class="hero-note">ChessBird is currently in closed testing on Android.</p>
+            </div>
           </div>
           <figure
             class="screenshot-rotator screenshot-rotator--hero"
             data-screenshot-group="home"
-            aria-label="ChessBird on your phone"
+            aria-label="ChessBird app preview"
           >
             <div class="screenshot-rotator__frame">
               <div class="screenshot-rotator__device-top" aria-hidden="true">
@@ -99,17 +218,17 @@
                 <img
                   class="screenshot-rotator__layer screenshot-rotator__layer--visible"
                   src="assets/screenshots/home/1.webp"
-                  alt="ChessBird on your phone"
-width="1080"
-                height="2273"
+                  alt="ChessBird home screen on Android"
+                  width="1080"
+                  height="2273"
                   decoding="async"
+                  fetchpriority="high"
                 />
                 <img
                   class="screenshot-rotator__layer"
-                  src="assets/screenshots/home/2.webp"
                   alt=""
-width="1080"
-                height="2273"
+                  width="1080"
+                  height="2273"
                   decoding="async"
                   aria-hidden="true"
                 />
@@ -119,207 +238,353 @@ width="1080"
         </div>
       </section>
 
-      <section class="section">
+      <!-- Screenshot showcase -->
+      <section class="section section--showcase" aria-labelledby="showcase-heading">
         <div class="container">
-          <h2>Built for shared moments, not noisy features</h2>
-          <div class="feature-grid">
-            <article class="card">
-              <h3>Real-time Voice While Playing</h3>
-              <p>Talk naturally during the match so every move feels like you are both at one board.</p>
-            </article>
-            <article class="card">
-              <h3>Private Room Invites</h3>
-              <p>Create a room and share an invite with a friend for a lightweight, private session.</p>
-            </article>
-            <article class="card">
-              <h3>Remote Togetherness</h3>
-              <p>Play from different places without losing the feeling of being present together.</p>
-            </article>
-            <article class="card">
-              <h3>Simple Room Joining</h3>
-              <p>Open the invite and join quickly with minimal setup so the game starts right away.</p>
-            </article>
-            <article class="card">
-              <h3>Lightweight and Fast</h3>
-              <p>Clean screens and responsive flow keep the focus on conversation and gameplay.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--showcase">
-        <div class="container">
-          <div class="showcase-panel">
-            <h2>See how ChessBird feels in use</h2>
-            <p class="section-intro section-intro--showcase">
-              Home, invites, live play, and settings—each view gently cycles so you can picture the
-              flow before you download.
+          <header class="section-header">
+            <p class="eyebrow">Inside the app</p>
+            <h2 id="showcase-heading">Chess that feels personal</h2>
+            <p class="section-intro">
+              From the invitation to the final move — each moment is designed for clarity, calm, and
+              playing together.
             </p>
-            <div class="showcase-grid">
-            <figure
-              class="screenshot-rotator screenshot-rotator--showcase"
-              data-screenshot-group="home"
-              aria-label="ChessBird home experience"
-            >
-              <div class="screenshot-rotator__frame">
-                <div class="screenshot-rotator__device-top" aria-hidden="true">
-                  <span class="screenshot-rotator__earpiece"></span>
+          </header>
+          <div class="showcase-grid">
+            <article class="showcase-card">
+              <figure
+                class="screenshot-rotator screenshot-rotator--showcase"
+                data-screenshot-group="the-invitation"
+                aria-label="Create a room and invite a friend"
+              >
+                <div class="screenshot-rotator__frame">
+                  <div class="screenshot-rotator__device-top" aria-hidden="true">
+                    <span class="screenshot-rotator__earpiece"></span>
+                  </div>
+                  <div class="screenshot-rotator__screen">
+                    <img
+                      class="screenshot-rotator__layer screenshot-rotator__layer--visible"
+                      src="assets/screenshots/the-invitation/1.webp"
+                      alt="Creating a chess room and sharing an invite with a friend"
+                      width="1080"
+                      height="2273"
+                      decoding="async"
+                    />
+                    <img
+                      class="screenshot-rotator__layer"
+                      src="assets/screenshots/the-invitation/2.webp"
+                      alt=""
+                      width="1080"
+                      height="2273"
+                      decoding="async"
+                      aria-hidden="true"
+                    />
+                  </div>
                 </div>
-                <div class="screenshot-rotator__screen">
-                  <img
-                    class="screenshot-rotator__layer screenshot-rotator__layer--visible"
-                    src="assets/screenshots/home/1.webp"
-                    alt="ChessBird home screen"
-width="1080"
-                height="2273"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <img
-                    class="screenshot-rotator__layer"
-                    src="assets/screenshots/home/2.webp"
-                    alt=""
-width="1080"
-                height="2273"
-                    loading="lazy"
-                    decoding="async"
-                    aria-hidden="true"
-                  />
+              </figure>
+              <h3 class="showcase-card__title">The Invitation</h3>
+              <p class="showcase-card__desc">Create a room and bring someone in with a single link.</p>
+            </article>
+            <article class="showcase-card">
+              <figure
+                class="screenshot-rotator screenshot-rotator--showcase"
+                data-screenshot-group="at-the-board"
+                aria-label="Live chess game at the board"
+              >
+                <div class="screenshot-rotator__frame">
+                  <div class="screenshot-rotator__device-top" aria-hidden="true">
+                    <span class="screenshot-rotator__earpiece"></span>
+                  </div>
+                  <div class="screenshot-rotator__screen">
+                    <img
+                      class="screenshot-rotator__layer screenshot-rotator__layer--visible"
+                      src="assets/screenshots/at-the-board/1.webp"
+                      alt="Live chess game with voice chat while you play"
+                      width="1080"
+                      height="2273"
+                      decoding="async"
+                    />
+                    <img
+                      class="screenshot-rotator__layer"
+                      src="assets/screenshots/at-the-board/2.webp"
+                      alt=""
+                      width="1080"
+                      height="2273"
+                      decoding="async"
+                      aria-hidden="true"
+                    />
+                  </div>
                 </div>
-              </div>
-              <figcaption class="screenshot-rotator__caption">Home</figcaption>
-            </figure>
-            <figure
-              class="screenshot-rotator screenshot-rotator--showcase"
-              data-screenshot-group="room"
-              aria-label="Private room and invites"
-            >
-              <div class="screenshot-rotator__frame">
-                <div class="screenshot-rotator__device-top" aria-hidden="true">
-                  <span class="screenshot-rotator__earpiece"></span>
+              </figure>
+              <h3 class="showcase-card__title">At the Board</h3>
+              <p class="showcase-card__desc">Play with voice, presence, and a board that stays out of your way.</p>
+            </article>
+            <article class="showcase-card">
+              <figure
+                class="screenshot-rotator screenshot-rotator--showcase"
+                data-screenshot-group="settings"
+                aria-label="Your board, your style — customize pieces and themes"
+              >
+                <div class="screenshot-rotator__frame">
+                  <div class="screenshot-rotator__device-top" aria-hidden="true">
+                    <span class="screenshot-rotator__earpiece"></span>
+                  </div>
+                  <div class="screenshot-rotator__screen">
+                    <img
+                      class="screenshot-rotator__layer screenshot-rotator__layer--visible"
+                      src="assets/screenshots/settings/1.webp"
+                      alt="Choosing chess boards, pieces, and appearance settings"
+                      width="1080"
+                      height="2273"
+                      decoding="async"
+                    />
+                    <img
+                      class="screenshot-rotator__layer"
+                      src="assets/screenshots/settings/2.webp"
+                      alt=""
+                      width="1080"
+                      height="2273"
+                      decoding="async"
+                      aria-hidden="true"
+                    />
+                  </div>
                 </div>
-                <div class="screenshot-rotator__screen">
-                  <img
-                    class="screenshot-rotator__layer screenshot-rotator__layer--visible"
-                    src="assets/screenshots/room/1.webp"
-                    alt="Private room and invite flow"
-width="1080"
-                height="2273"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <img
-                    class="screenshot-rotator__layer"
-                    src="assets/screenshots/room/2.webp"
-                    alt=""
-width="1080"
-                height="2273"
-                    loading="lazy"
-                    decoding="async"
-                    aria-hidden="true"
-                  />
+              </figure>
+              <h3 class="showcase-card__title">Your Board, Your Style</h3>
+              <p class="showcase-card__desc">Choose boards and pieces that feel right at your table.</p>
+            </article>
+            <article class="showcase-card">
+              <figure
+                class="screenshot-rotator screenshot-rotator--showcase"
+                data-screenshot-group="result"
+                aria-label="The final move — game result screen"
+              >
+                <div class="screenshot-rotator__frame">
+                  <div class="screenshot-rotator__device-top" aria-hidden="true">
+                    <span class="screenshot-rotator__earpiece"></span>
+                  </div>
+                  <div class="screenshot-rotator__screen">
+                    <img
+                      class="screenshot-rotator__layer screenshot-rotator__layer--visible"
+                      src="assets/screenshots/result/1.webp"
+                      alt="Endgame screen celebrating a finished chess game with a friend"
+                      width="1080"
+                      height="2273"
+                      decoding="async"
+                    />
+                    <img
+                      class="screenshot-rotator__layer"
+                      src="assets/screenshots/result/2.webp"
+                      alt=""
+                      width="1080"
+                      height="2273"
+                      decoding="async"
+                      aria-hidden="true"
+                    />
+                  </div>
                 </div>
-              </div>
-              <figcaption class="screenshot-rotator__caption">Room</figcaption>
-            </figure>
-            <figure
-              class="screenshot-rotator screenshot-rotator--showcase"
-              data-screenshot-group="gameplay"
-              aria-label="Live chess gameplay"
-            >
-              <div class="screenshot-rotator__frame">
-                <div class="screenshot-rotator__device-top" aria-hidden="true">
-                  <span class="screenshot-rotator__earpiece"></span>
-                </div>
-                <div class="screenshot-rotator__screen">
-                  <img
-                    class="screenshot-rotator__layer screenshot-rotator__layer--visible"
-                    src="assets/screenshots/gameplay/1.webp"
-                    alt="Live chess board while you play"
-width="1080"
-                height="2273"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <img
-                    class="screenshot-rotator__layer"
-                    src="assets/screenshots/gameplay/2.webp"
-                    alt=""
-width="1080"
-                height="2273"
-                    loading="lazy"
-                    decoding="async"
-                    aria-hidden="true"
-                  />
-                </div>
-              </div>
-              <figcaption class="screenshot-rotator__caption">Gameplay</figcaption>
-            </figure>
-            <figure
-              class="screenshot-rotator screenshot-rotator--showcase"
-              data-screenshot-group="other"
-              aria-label="Voice and playing together"
-            >
-              <div class="screenshot-rotator__frame">
-                <div class="screenshot-rotator__device-top" aria-hidden="true">
-                  <span class="screenshot-rotator__earpiece"></span>
-                </div>
-                <div class="screenshot-rotator__screen">
-                  <img
-                    class="screenshot-rotator__layer screenshot-rotator__layer--visible"
-                    src="assets/screenshots/other/1.webp"
-                    alt="Voice chat while playing with a friend"
-width="1080"
-                height="2273"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <img
-                    class="screenshot-rotator__layer"
-                    src="assets/screenshots/other/2.webp"
-                    alt=""
-width="1080"
-                height="2273"
-                    loading="lazy"
-                    decoding="async"
-                    aria-hidden="true"
-                  />
-                </div>
-              </div>
-              <figcaption class="screenshot-rotator__caption">Settings</figcaption>
-            </figure>
-            </div>
+              </figure>
+              <h3 class="showcase-card__title">The Final Move</h3>
+              <p class="showcase-card__desc">A game remembered — and a moment worth sharing with a friend.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container contact-panel">
-          <h2>Contact Us</h2>
-          <p>
-            Questions, feedback, or something not working? Open Contact Us to send a message through
-            our form.
-          </p>
-          <p>
-            <a class="playstore-btn contact-cta" href="contact.html">Contact Us</a>
-          </p>
-          <p class="contact-alt">
-            We route support through the Contact Us page so every thread stays organized—tap above to
-            reach us.
-          </p>
+      <!-- Why ChessBird -->
+      <section class="section section--features" aria-labelledby="features-heading">
+        <div class="container">
+          <header class="section-header section-header--center">
+            <p class="eyebrow">Why ChessBird</p>
+            <h2 id="features-heading">Chess with friends, thoughtfully made</h2>
+            <p class="section-intro">
+              A multiplayer chess app designed for connection — not clutter, rankings, or noise.
+            </p>
+          </header>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="22" />
+                </svg>
+              </div>
+              <h3>Talk While You Play</h3>
+              <p>Built-in voice chat that keeps conversation part of the game.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
+              <h3>Private Games</h3>
+              <p>Create invite-only games for friends and family.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <line x1="19" y1="8" x2="19" y2="14" />
+                  <line x1="22" y1="11" x2="16" y2="11" />
+                </svg>
+              </div>
+              <h3>Join in One Tap</h3>
+              <p>Share a link and start playing together in seconds.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <h3>Your Board, Your Style</h3>
+              <p>Choose from thoughtfully crafted board and piece themes to make the game your own.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section class="section section--steps" aria-labelledby="steps-heading">
+        <div class="container">
+          <header class="section-header section-header--center">
+            <p class="eyebrow">How it works</p>
+            <h2 id="steps-heading">Three steps to your first game</h2>
+          </header>
+          <ol class="steps-list">
+            <li class="step-card">
+              <span class="step-card__num" aria-hidden="true">1</span>
+              <h3>Create a room</h3>
+              <p>Open ChessBird and start a private game room in seconds.</p>
+            </li>
+            <li class="step-card">
+              <span class="step-card__num" aria-hidden="true">2</span>
+              <h3>Invite a friend</h3>
+              <p>Send the invite link through any messenger you already use.</p>
+            </li>
+            <li class="step-card">
+              <span class="step-card__num" aria-hidden="true">3</span>
+              <h3>Play and talk together</h3>
+              <p>Make your moves, use voice chat, and enjoy the game like you're in the same room.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section--faq" aria-labelledby="faq-heading">
+        <div class="container">
+          <header class="section-header section-header--center">
+            <p class="eyebrow">Questions</p>
+            <h2 id="faq-heading">Frequently asked</h2>
+          </header>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-question">Is ChessBird free?</summary>
+              <div class="faq-answer">
+                <p>Yes. ChessBird is free to download and play.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">Can I play chess with friends online?</summary>
+              <div class="faq-answer">
+                <p>
+                  Yes. Create a private game room, send an invite, and start playing together from
+                  anywhere.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">Can I talk while playing ChessBird?</summary>
+              <div class="faq-answer">
+                <p>Yes. Voice chat is built into online games, so you can talk while you play.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">Can I play offline?</summary>
+              <div class="faq-answer">
+                <p>
+                  Yes. ChessBird includes offline play, so you can enjoy a game even without an
+                  internet connection.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">Are games private?</summary>
+              <div class="faq-answer">
+                <p>Yes. Games are invite-only, so you choose exactly who you play with.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">Is ChessBird available on Android?</summary>
+              <div class="faq-answer">
+                <p>Yes. ChessBird is available on Android through the Google Play Store.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Download CTA -->
+      <section class="section section--download" aria-labelledby="download-heading">
+        <div class="container">
+          <div class="download-panel">
+            <div class="download-panel__copy">
+              <h2 id="download-heading">Ready to play together?</h2>
+              <p>
+                ChessBird is currently in closed testing on Android. Private rooms, voice chat, and a
+                beautiful board — everything you need to play chess together.
+              </p>
+            </div>
+            <a
+              class="btn-play-store btn-play-store--large"
+              href="early-access/"
+              data-analytics="join_early_access_click"
+              aria-label="Join ChessBird early access"
+            >
+              <span class="btn-play-store__store">Join Early Access Now</span>
+            </a>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-links">
-        <a href="index.html">Website</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="contact.html">Contact Us</a>
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="index.html" aria-label="ChessBird home">
+            <img src="assets/logo/logo.svg" alt="" width="32" height="32" />
+            <span>ChessBird</span>
+          </a>
+          <p class="footer-tagline">Play chess like you're sitting together</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.chessbird.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-analytics="footer_play_link"
+          >
+            Google Play
+          </a>
+        </nav>
+        <p class="footer-copy">&copy; <span id="footer-year">2026</span> ChessBird. All rights reserved.</p>
       </div>
     </footer>
 
+    <script src="js/contact-email.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/analytics.js" defer></script>
+    <script>
+      document.getElementById("footer-year").textContent = String(new Date().getFullYear());
+    </script>
   </body>
 </html>

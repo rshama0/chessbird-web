@@ -3,23 +3,29 @@
 /**
  * Folder-based screenshot rotation (vanilla JS, no dependencies).
  * Layers live inside `.screenshot-rotator__screen`; paths are explicit for static hosting.
+ *
+ * Showcase moment keys: the-invitation → at-the-board → settings → result (hero uses home only).
  */
 const screenshotGroups = {
-  home: ["assets/screenshots/home/1.webp", "assets/screenshots/home/2.webp"],
-  room: ["assets/screenshots/room/1.webp", "assets/screenshots/room/2.webp", "assets/screenshots/room/3.webp", "assets/screenshots/room/4.webp"],
-  gameplay: [
-    "assets/screenshots/gameplay/1.webp",
-    "assets/screenshots/gameplay/2.webp",
-    "assets/screenshots/gameplay/3.webp",
-    "assets/screenshots/gameplay/4.webp",
-    "assets/screenshots/gameplay/5.webp",
-    "assets/screenshots/gameplay/6.webp",
-    "assets/screenshots/gameplay/7.webp",
-    "assets/screenshots/gameplay/8.webp",
-    "assets/screenshots/gameplay/9.webp",
-    "assets/screenshots/gameplay/10.webp",
+  home: ["assets/screenshots/home/1.webp"],
+  "the-invitation": [
+    "assets/screenshots/the-invitation/1.webp",
+    "assets/screenshots/the-invitation/2.webp",
+    "assets/screenshots/the-invitation/3.webp",
+    "assets/screenshots/the-invitation/4.webp",
   ],
-  other: ["assets/screenshots/other/1.webp", "/assets/screenshots/other/2.webp", "/assets/screenshots/other/3.webp", "/assets/screenshots/other/4.webp", "/assets/screenshots/other/5.webp", "/assets/screenshots/other/6.webp"],
+  "at-the-board": [
+    "assets/screenshots/at-the-board/1.webp",
+    "assets/screenshots/at-the-board/2.webp",
+    "assets/screenshots/at-the-board/3.webp",
+    "assets/screenshots/at-the-board/4.webp",
+  ],
+  settings: [
+    "assets/screenshots/settings/1.webp",
+    "assets/screenshots/settings/2.webp",
+    "assets/screenshots/settings/3.webp",
+  ],
+  result: ["assets/screenshots/result/1.webp", "assets/screenshots/result/2.webp"],
 };
 
 const SCREENSHOT_ROTATE_MS = 3500;
@@ -29,6 +35,12 @@ const SCREENSHOT_FADE_MS = 750;
 
 function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function prepareRotatorImg(img) {
+  if (!img) return;
+  img.loading = "eager";
+  img.decoding = "async";
 }
 
 function initScreenshotRotators() {
@@ -51,6 +63,8 @@ function initScreenshotRotators() {
 
     let fore = layers[0];
     let back = layers[1];
+    prepareRotatorImg(fore);
+    prepareRotatorImg(back);
     let index = 0;
     let animating = false;
 
@@ -93,6 +107,7 @@ function initScreenshotRotators() {
 
         const preloadUrl = paths[(index + 1) % paths.length];
         window.requestAnimationFrame(() => {
+          prepareRotatorImg(back);
           back.src = preloadUrl;
           if (typeof back.decode === "function") {
             back.decode().catch(() => {});

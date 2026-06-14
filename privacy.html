@@ -8,7 +8,13 @@
       name="description"
       content="Privacy Policy for ChessBird — how we collect, use, and protect your information."
     />
-    <meta name="theme-color" content="#0F0A2A" />
+    <meta name="theme-color" content="#06050A" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      rel="stylesheet"
+    />
     <meta name="apple-mobile-web-app-title" content="ChessBird" />
     <meta name="application-name" content="ChessBird" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -24,7 +30,7 @@
     <meta property="og:image" content="https://chessbird.app/assets/branding/og-image.jpg" />
     <meta property="og:image:secure_url" content="https://chessbird.app/assets/branding/og-image.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="ChessBird — social voice chess with friends, together." />
+    <meta property="og:image:alt" content="ChessBird — voice chess with friends, together." />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -34,16 +40,8 @@
       content="Privacy Policy for ChessBird — how we collect, use, and protect your information."
     />
     <meta name="twitter:image" content="https://chessbird.app/assets/branding/og-image.jpg" />
-    <!-- Google Analytics 4 (GA4) placeholder setup: replace G-XXXXXXXXXX with your real Measurement ID before go-live. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
-    </script>
+    <script src="js/site-config.js"></script>
+    <script src="js/gtag-init.js"></script>
     <link rel="icon" href="https://chessbird.app/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="96x96" href="https://chessbird.app/assets/branding/favicon-96x96.png" />
     <link rel="apple-touch-icon" href="https://chessbird.app/assets/branding/apple-touch-icon.png" />
@@ -51,30 +49,36 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html" aria-label="ChessBird home">
-          <img src="assets/logo/logo.svg" alt="ChessBird logo" width="36" height="36" />
+          <img src="assets/logo/logo.svg" alt="" width="36" height="36" />
           <span>ChessBird</span>
         </a>
-        <nav class="site-nav" aria-label="Site">
-          <a href="index.html">Website</a>
-          <a href="contact.html">Contact Us</a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Site">
+          <a href="index.html">Home</a>
           <a href="privacy.html" aria-current="page">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
+          <a href="contact.html">Contact</a>
+          <a class="site-nav__cta btn-play-store btn-play-store--compact" href="early-access/" data-analytics="join_early_access_click">Join Early Access</a>
         </nav>
       </div>
     </header>
 
-    <main class="legal-main">
+    <main class="legal-main" id="main-content">
       <section class="section">
         <div class="container legal-card legal-card--policy">
           <h1>Privacy Policy for ChessBird</h1>
-          <p><strong>Last updated:</strong> May 14, 2026</p>
-          <p><strong>App name:</strong> ChessBird</p>
+          <p><strong>Last updated:</strong> June 14, 2026</p>
           <p>
-            Welcome to ChessBird. This Privacy Policy explains how ChessBird (“we,” “our,” or “us”)
-            collects, uses, and protects information when you use the app.
+            Welcome to ChessBird. This Privacy Policy explains how ChessBird (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;)
+            collects, uses, and protects information when you use the ChessBird app or our website.
           </p>
           <p>By using ChessBird, you agree to the practices described in this Privacy Policy.</p>
 
@@ -83,7 +87,11 @@
 
           <h2>2. Information We Collect</h2>
           <p>
-            ChessBird is designed to work without requiring a permanent account or profile.
+            ChessBird is designed to work without requiring you to create a traditional account with a
+            username and password. Certain information may still be associated with your device, app
+            installation, or other service-related identifiers to support features such as Premium
+            subscriptions, Remove Ads purchases, voice credits, purchase restoration, and general
+            service operation. This information is used only to provide and maintain those features.
           </p>
 
           <h3>Gameplay &amp; Session Information</h3>
@@ -114,6 +122,10 @@
               Voice communication is only available after a voice request is initiated and accepted
               by participants.
             </li>
+            <li>
+              Voice communication is provided through third-party realtime communication infrastructure,
+              such as LiveKit, to enable voice connectivity between participants.
+            </li>
             <li>The app does not record or permanently store voice communications.</li>
           </ul>
           <p>
@@ -121,7 +133,28 @@
             sessions. Avoid sharing sensitive or personal information during voice communication.
           </p>
 
-          <h3>Contact Us &amp; support information</h3>
+          <h3>Website Analytics</h3>
+          <p>The ChessBird website uses website analytics tools.</p>
+          <p>
+            Website analytics may collect information such as pages visited, device or browser
+            information, approximate location information, and interactions with website features. This
+            information is used to understand website usage and improve ChessBird. Google Analytics may
+            be used for this purpose.
+          </p>
+
+          <h3>Early Access Testing Feedback</h3>
+          <p>
+            Users who voluntarily participate in ChessBird testing or early access programs may submit
+            feedback, suggestions, bug reports, screenshots, error messages, app version information,
+            and optional contact information through feedback forms.
+          </p>
+          <p>
+            This information may be used to investigate issues, improve ChessBird, and respond to
+            feedback when contact information is provided. Users should avoid submitting screenshots that
+            contain sensitive personal, financial, authentication, or other confidential information.
+          </p>
+
+          <h3>Contact Us &amp; Support Information</h3>
           <p>
             If you use Contact Us (from the app or on our website), we may collect information you
             voluntarily provide, including:
@@ -132,8 +165,24 @@
             <li>Complaint or bug report details</li>
           </ul>
           <p>
+            Contact form submissions on our website are processed through FormSubmit to deliver messages
+            to ChessBird.
+          </p>
+          <p>
             For certain support categories such as complaints or reports, providing an email address
             may be required so we can respond appropriately.
+          </p>
+
+          <h3>Purchases and Subscriptions</h3>
+          <p>
+            ChessBird may offer optional purchases through Google Play, including Premium subscriptions
+            and Remove Ads purchases.
+          </p>
+          <p>
+            Information related to purchase verification, subscription status, purchase status, and
+            feature entitlements may be processed. This information is used to activate purchased
+            features, restore eligible purchases, verify purchases made through Google Play, and support
+            service operation.
           </p>
 
           <h3>Technical &amp; Diagnostic Information</h3>
@@ -151,7 +200,7 @@
           </ul>
 
           <h2>3. Third-Party Services</h2>
-          <p>ChessBird uses third-party services to operate and improve the app.</p>
+          <p>ChessBird uses third-party services to operate and improve the app and website.</p>
           <p>
             These services may collect or process certain technical or usage information according to
             their own privacy policies.
@@ -159,13 +208,28 @@
           <p>Third-party services used by ChessBird may include:</p>
           <ul>
             <li>
-              <strong>Google Firebase</strong> — (Analytics and crash reporting)
+              <strong>Google Firebase</strong> — Analytics and crash reporting in the app
             </li>
             <li>
-              <strong>Google AdMob</strong> — (Advertisements and ad delivery)
+              <strong>Google Analytics</strong> — Website analytics
             </li>
             <li>
-              <strong>LiveKit</strong> — (Realtime voice communication infrastructure)
+              <strong>Google AdMob</strong> — Advertisements and ad delivery
+            </li>
+            <li>
+              <strong>Google Play</strong> — Purchases, subscriptions, and billing services
+            </li>
+            <li>
+              <strong>Google Forms</strong> — Feedback submissions from testing or early access programs
+            </li>
+            <li>
+              <strong>Google Groups</strong> — Tester communications for voluntary testing programs
+            </li>
+            <li>
+              <strong>FormSubmit</strong> — Contact form processing on our website
+            </li>
+            <li>
+              <strong>LiveKit</strong> — Realtime voice communication infrastructure
             </li>
           </ul>
           <p>We encourage users to review the privacy policies of these providers for additional details.</p>
@@ -178,6 +242,13 @@
           <p>
             Advertisements shown within the app may be personalized based on device information,
             advertising identifiers, or other information processed by advertising providers.
+          </p>
+          <p>
+            ChessBird may also offer optional rewarded advertisements that allow free users to earn voice
+            credits for use with voice communication features. Rewarded advertisements may be provided
+            through services such as Google AdMob. Information related to rewarded advertisement rewards,
+            voice credit grants, and voice feature usage may be processed to operate and support these
+            features.
           </p>
           <p>
             Users may manage certain advertising preferences through their Google account or device
@@ -205,12 +276,28 @@
             <li>Precise location access</li>
           </ul>
 
-          <h2>6. Data Retention</h2>
-          <p>ChessBird primarily uses temporary gameplay and session-based data.</p>
+          <h2>6. Tester Groups and Communications</h2>
+          <p>
+            Users who voluntarily join ChessBird tester groups or testing programs may receive
+            announcements, testing updates, release information, and other communications related to
+            ChessBird.
+          </p>
+          <p>
+            Participation is optional. Users may leave tester groups at any time. Tester groups may be
+            operated through services such as Google Groups.
+          </p>
+
+          <h2>7. Data Retention</h2>
+          <p>ChessBird primarily uses temporary gameplay and session-based data for active online play.</p>
           <ul>
             <li>
               Gameplay and room-related information may be retained temporarily to support gameplay,
               reconnection, stability, and security.
+            </li>
+            <li>
+              Device-linked or service-related information used for purchases, subscriptions, voice
+              credits, or feature entitlements may be retained as reasonably necessary to provide those
+              features.
             </li>
             <li>
               Technical logs and diagnostic information may be retained as reasonably necessary for
@@ -221,16 +308,17 @@
               according to their own policies.
             </li>
             <li>
-              Support communications may be retained as reasonably necessary to respond to inquiries,
-              complaints, legal obligations, or security matters.
+              Support communications and testing feedback may be retained as reasonably necessary to
+              respond to inquiries, investigate issues, improve ChessBird, or address security matters.
             </li>
           </ul>
           <p>
-            Because ChessBird does not currently use persistent user accounts, no permanent gameplay
-            profile is maintained.
+            ChessBird does not use traditional user accounts with usernames and passwords. Some
+            service-related information may still be retained to support purchases, voice credits, and
+            other features described in this policy.
           </p>
 
-          <h2>7. User Controls</h2>
+          <h2>8. User Controls</h2>
           <p>Users may:</p>
           <ul>
             <li>Play without enabling voice communication</li>
@@ -238,10 +326,14 @@
             <li>Leave or resign games at any time</li>
             <li>Mute voice communication during gameplay</li>
             <li>Manage advertising preferences through supported device or provider settings</li>
-            <li>Use our <a href="contact.html">Contact Us</a> page for privacy questions or concerns</li>
+            <li>Leave tester groups at any time</li>
+            <li>
+              Contact ChessBird regarding privacy-related questions or requests as described in
+              Section 12
+            </li>
           </ul>
 
-          <h2>8. Security</h2>
+          <h2>9. Security</h2>
           <p>
             We take reasonable measures to help maintain the stability and security of the service.
           </p>
@@ -254,22 +346,41 @@
             avoid sharing personal or sensitive information during gameplay or voice communication.
           </p>
 
-          <h2>9. Children’s Privacy</h2>
+          <h2>10. Children&rsquo;s Privacy</h2>
           <p>ChessBird is designed for users aged 13 years and above.</p>
           <p>We do not knowingly design the service for children under 13.</p>
 
-          <h2>10. Changes to This Privacy Policy</h2>
+          <h2>11. International Processing</h2>
+          <p>
+            Some third-party services used by ChessBird may process information in countries other than
+            your country of residence.
+          </p>
+
+          <h2>12. Privacy Requests</h2>
+          <p>
+            Users may contact ChessBird regarding privacy-related questions or requests for information
+            that ChessBird maintains about them, where applicable.
+          </p>
+          <p>
+            Certain information may already have been deleted or may no longer be available according to
+            data retention practices described in this policy.
+          </p>
+          <p>
+            Please use our <a href="contact.html">Contact Us</a> page for privacy-related requests.
+          </p>
+
+          <h2>13. Changes to This Privacy Policy</h2>
           <p>We may update this Privacy Policy from time to time.</p>
           <p>
             Updated versions will be posted through the app or on our
-            <a href="index.html">Website</a> with a revised &ldquo;Last Updated&rdquo; date.
+            <a href="index.html">Website</a> with a revised &ldquo;Last updated&rdquo; date.
           </p>
           <p>
             Continued use of the service after changes become effective constitutes acceptance of the
             updated policy.
           </p>
 
-          <h2>11. Contact Us</h2>
+          <h2>14. Contact Us</h2>
           <p>
             If you have questions, feedback, complaints, or privacy-related concerns, please use our
             <a href="contact.html">Contact Us</a> page for the fastest response.
@@ -283,13 +394,25 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-links">
-        <a href="index.html">Website</a>
-        <a href="privacy.html" aria-current="page">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="contact.html">Contact Us</a>
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="index.html" aria-label="ChessBird home">
+            <img src="assets/logo/logo.svg" alt="" width="32" height="32" />
+            <span>ChessBird</span>
+          </a>
+          <p class="footer-tagline">Play chess like you're sitting together</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="privacy.html" aria-current="page">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="https://play.google.com/store/apps/details?id=com.chessbird.app" target="_blank" rel="noopener noreferrer" data-analytics="footer_play_link">Google Play</a>
+        </nav>
+        <p class="footer-copy">&copy; <span id="footer-year">2026</span> ChessBird. All rights reserved.</p>
       </div>
     </footer>
     <script src="js/main.js" defer></script>
+    <script src="js/analytics.js" defer></script>
+    <script>document.getElementById("footer-year").textContent = String(new Date().getFullYear());</script>
   </body>
 </html>

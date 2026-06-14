@@ -3,12 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Terms of Use | ChessBird</title>
+    <title>Terms of Service | ChessBird</title>
     <meta
       name="description"
-      content="Terms of Use for ChessBird — rules for using the app and related services."
+      content="Terms of Service for ChessBird — rules for using the app and related services."
     />
-    <meta name="theme-color" content="#0F0A2A" />
+    <meta name="theme-color" content="#06050A" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      rel="stylesheet"
+    />
     <meta name="apple-mobile-web-app-title" content="ChessBird" />
     <meta name="application-name" content="ChessBird" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -16,34 +22,26 @@
     <meta property="og:site_name" content="ChessBird" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://chessbird.app/terms.html" />
-    <meta property="og:title" content="Terms of Use | ChessBird" />
+    <meta property="og:title" content="Terms of Service | ChessBird" />
     <meta
       property="og:description"
-      content="Terms of Use for ChessBird — rules for using the app and related services."
+      content="Terms of Service for ChessBird — rules for using the app and related services."
     />
     <meta property="og:image" content="https://chessbird.app/assets/branding/og-image.jpg" />
     <meta property="og:image:secure_url" content="https://chessbird.app/assets/branding/og-image.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="ChessBird — social voice chess with friends, together." />
+    <meta property="og:image:alt" content="ChessBird — voice chess with friends, together." />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Terms of Use | ChessBird" />
+    <meta name="twitter:title" content="Terms of Service | ChessBird" />
     <meta
       name="twitter:description"
-      content="Terms of Use for ChessBird — rules for using the app and related services."
+      content="Terms of Service for ChessBird — rules for using the app and related services."
     />
     <meta name="twitter:image" content="https://chessbird.app/assets/branding/og-image.jpg" />
-    <!-- Google Analytics 4 (GA4) placeholder setup: replace G-XXXXXXXXXX with your real Measurement ID before go-live. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
-    </script>
+    <script src="js/site-config.js"></script>
+    <script src="js/gtag-init.js"></script>
     <link rel="icon" href="https://chessbird.app/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="96x96" href="https://chessbird.app/assets/branding/favicon-96x96.png" />
     <link rel="apple-touch-icon" href="https://chessbird.app/assets/branding/apple-touch-icon.png" />
@@ -51,30 +49,36 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html" aria-label="ChessBird home">
-          <img src="assets/logo/logo.svg" alt="ChessBird logo" width="36" height="36" />
+          <img src="assets/logo/logo.svg" alt="" width="36" height="36" />
           <span>ChessBird</span>
         </a>
-        <nav class="site-nav" aria-label="Site">
-          <a href="index.html">Website</a>
-          <a href="contact.html">Contact Us</a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Site">
+          <a href="index.html">Home</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html" aria-current="page">Terms of Service</a>
+          <a href="contact.html">Contact</a>
+          <a class="site-nav__cta btn-play-store btn-play-store--compact" href="early-access/" data-analytics="join_early_access_click">Join Early Access</a>
         </nav>
       </div>
     </header>
 
-    <main class="legal-main">
+    <main class="legal-main" id="main-content">
       <section class="section">
         <div class="container legal-card legal-card--policy">
-          <h1>Terms of Use for ChessBird</h1>
-          <p><strong>Last updated:</strong> May 14, 2026</p>
-          <p><strong>App name:</strong> ChessBird</p>
+          <h1>Terms of Service for ChessBird</h1>
+          <p><strong>Last updated:</strong> June 14, 2026</p>
           <p>
-            Welcome to ChessBird. These Terms of Use (“Terms”) govern your access to and use of the
-            ChessBird application and related services (“Service”).
+            Welcome to ChessBird. These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of the
+            ChessBird application and related services (&ldquo;Service&rdquo;).
           </p>
           <p>By using ChessBird, you agree to these Terms.</p>
           <p>If you do not agree with these Terms, please do not use the Service.</p>
@@ -89,7 +93,7 @@
             voice communication features.
           </p>
           <p>
-            The Service is provided on an “as available” basis and may evolve, change, improve, or be
+            The Service is provided on an &ldquo;as available&rdquo; basis and may evolve, change, improve, or be
             modified over time.
           </p>
 
@@ -121,8 +125,9 @@
             <li>Use the Service for illegal or malicious purposes</li>
           </ul>
           <p>
-            We may take reasonable action, including restricting access to the Service where misuse or
-            abuse is identified.
+            We may take reasonable action where misuse, abuse, cheating, harmful behavior, security
+            concerns, or violations of these Terms are identified. Reasonable action may include warnings,
+            feature restrictions, temporary restrictions, or access restrictions.
           </p>
 
           <h2>5. User Responsibility</h2>
@@ -153,9 +158,50 @@
           <h2>7. Purchases &amp; Advertising</h2>
           <p>ChessBird may include advertisements and optional in-app purchases.</p>
           <p>
-            Purchases are processed through the Google Play platform and are subject to Google Play’s
+            Purchases are processed through the Google Play platform and are subject to Google Play&rsquo;s
             billing, refund, and payment policies.
           </p>
+
+          <h3>Premium Subscriptions</h3>
+          <p>Premium subscriptions may be offered.</p>
+          <p>
+            Premium features are available while the subscription is active. Google Play handles
+            subscription billing, renewals, cancellations, and account management. Premium features and
+            benefits may evolve over time.
+          </p>
+
+          <h3>Remove Ads Purchases</h3>
+          <p>Remove Ads purchases may be offered.</p>
+          <ul>
+            <li>Remove Ads removes advertisements normally shown during app usage.</li>
+            <li>Remove Ads does not include Premium benefits.</li>
+            <li>
+              Remove Ads does not provide voice credits or unlimited voice communication access.
+            </li>
+            <li>
+              Users may still choose to watch optional rewarded advertisements to earn voice credits.
+            </li>
+          </ul>
+          <p>Remove Ads purchases are processed through Google Play.</p>
+
+          <h3>Voice Credits</h3>
+          <p>Voice communication features may use voice credits.</p>
+          <p>
+            Free users may earn voice credits through rewarded advertisements or other methods made
+            available by ChessBird.
+          </p>
+          <ul>
+            <li>Voice credits have no cash value and cannot be transferred, exchanged, redeemed, or refunded.</li>
+            <li>
+              Voice credits may be modified, reset, expire, removed, or discontinued as part of service
+              operation, inactivity, maintenance, feature changes, or service updates.
+            </li>
+          </ul>
+          <p>
+            Voice credits, voice limits, Premium benefits, and related monetization features may change as
+            ChessBird evolves.
+          </p>
+
           <p>
             We reserve the right to modify, improve, replace, or discontinue features, content, or
             monetization systems at any time.
@@ -189,7 +235,7 @@
           <h2>10. Limitation of Liability</h2>
           <p>To the maximum extent permitted by applicable law:</p>
           <ul>
-            <li>ChessBird is provided “as is” and “as available”</li>
+            <li>ChessBird is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo;</li>
             <li>
               We do not guarantee uninterrupted, error-free, or completely secure operation of the
               Service
@@ -204,18 +250,33 @@
             may not apply to you.
           </p>
 
-          <h2>11. Changes to These Terms</h2>
+          <h2>11. Early Access and Testing Programs</h2>
+          <p>
+            ChessBird may offer optional testing, preview, or early access programs. These programs may
+            include experimental or incomplete features. Features in test programs may be modified,
+            replaced, or discontinued. Test versions may contain bugs or issues.
+          </p>
+          <p>
+            Participation is voluntary. Users may leave testing programs or tester groups at any time.
+          </p>
+          <p>
+            Feedback submitted through testing programs may be used to improve ChessBird. Submission of
+            feedback does not create ownership rights, compensation rights, Premium benefits, voice credits,
+            special access, or an obligation for ChessBird to implement the feedback.
+          </p>
+
+          <h2>12. Changes to These Terms</h2>
           <p>We may update these Terms from time to time.</p>
           <p>
             Updated versions may be posted through the app or on our
-            <a href="index.html">Website</a> with a revised “Last updated” date.
+            <a href="index.html">Website</a> with a revised &ldquo;Last updated&rdquo; date.
           </p>
           <p>
             Continued use of the Service after changes become effective constitutes acceptance of the
             updated Terms.
           </p>
 
-          <h2>12. Contact Us</h2>
+          <h2>13. Contact Us</h2>
           <p>
             If you have questions, feedback, complaints, or support-related concerns, please use our
             <a href="contact.html">Contact Us</a> page for the fastest response.
@@ -229,13 +290,25 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-links">
-        <a href="index.html">Website</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html" aria-current="page">Terms of Service</a>
-        <a href="contact.html">Contact Us</a>
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="index.html" aria-label="ChessBird home">
+            <img src="assets/logo/logo.svg" alt="" width="32" height="32" />
+            <span>ChessBird</span>
+          </a>
+          <p class="footer-tagline">Play chess like you're sitting together</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html" aria-current="page">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="https://play.google.com/store/apps/details?id=com.chessbird.app" target="_blank" rel="noopener noreferrer" data-analytics="footer_play_link">Google Play</a>
+        </nav>
+        <p class="footer-copy">&copy; <span id="footer-year">2026</span> ChessBird. All rights reserved.</p>
       </div>
     </footer>
     <script src="js/main.js" defer></script>
+    <script src="js/analytics.js" defer></script>
+    <script>document.getElementById("footer-year").textContent = String(new Date().getFullYear());</script>
   </body>
 </html>

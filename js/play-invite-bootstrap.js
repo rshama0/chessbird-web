@@ -104,7 +104,10 @@ function ogHeadBlock(opts) {
     '<meta name="description" content="' +
     description +
     '" />' +
-    '<meta name="theme-color" content="#0F0A2A" />' +
+    '<meta name="theme-color" content="#06050A" />' +
+    '<link rel="preconnect" href="https://fonts.googleapis.com" />' +
+    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />' +
+    '<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />' +
     '<meta name="apple-mobile-web-app-title" content="ChessBird" />' +
     '<meta name="application-name" content="ChessBird" />' +
     '<meta name="mobile-web-app-capable" content="yes" />' +
@@ -129,7 +132,7 @@ function ogHeadBlock(opts) {
     image +
     '" />' +
     '<meta property="og:image:type" content="image/jpeg" />' +
-    '<meta property="og:image:alt" content="ChessBird — social voice chess with friends, together." />' +
+    '<meta property="og:image:alt" content="ChessBird — voice chess with friends, together." />' +
     '<meta property="og:image:width" content="' +
     ogImageWidth() +
     '" />' +
@@ -175,25 +178,39 @@ function siteHeader() {
   return (
     '<header class="site-header"><div class="container header-inner">' +
     '<a class="brand" href="index.html" aria-label="ChessBird home">' +
-    '<img src="assets/logo/logo.svg" alt="ChessBird logo" width="36" height="36" />' +
+    '<img src="assets/logo/logo.svg" alt="" width="36" height="36" />' +
     "<span>ChessBird</span></a>" +
-    '<nav class="site-nav" aria-label="Site">' +
-    '<a href="index.html">Website</a>' +
-    '<a href="contact.html">Contact Us</a>' +
+    '<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">' +
+    '<span class="nav-toggle__bar" aria-hidden="true"></span>' +
+    '<span class="nav-toggle__bar" aria-hidden="true"></span>' +
+    '<span class="nav-toggle__bar" aria-hidden="true"></span></button>' +
+    '<nav id="site-nav" class="site-nav" aria-label="Site">' +
+    '<a href="index.html">Home</a>' +
     '<a href="privacy.html">Privacy Policy</a>' +
     '<a href="terms.html">Terms of Service</a>' +
+    '<a href="contact.html">Contact</a>' +
+    '<a class="site-nav__cta btn-play-store btn-play-store--compact" href="early-access/" data-analytics="join_early_access_click">Join Early Access</a>' +
     "</nav></div></header>"
   );
 }
 
 function siteFooter() {
+  var year = String(new Date().getFullYear());
   return (
-    '<footer class="site-footer"><div class="container footer-links">' +
-    '<a href="index.html">Website</a>' +
+    '<footer class="site-footer"><div class="container footer-inner">' +
+    '<div class="footer-brand">' +
+    '<a class="brand brand--footer" href="index.html" aria-label="ChessBird home">' +
+    '<img src="assets/logo/logo.svg" alt="" width="32" height="32" /><span>ChessBird</span></a>' +
+    '<p class="footer-tagline">Play chess like you\'re sitting together</p></div>' +
+    '<nav class="footer-nav" aria-label="Footer">' +
     '<a href="privacy.html">Privacy Policy</a>' +
     '<a href="terms.html">Terms of Service</a>' +
     '<a href="contact.html">Contact Us</a>' +
-    "</div></footer>"
+    '<a href="https://play.google.com/store/apps/details?id=com.chessbird.app" target="_blank" rel="noopener noreferrer" data-analytics="footer_play_link">Google Play</a>' +
+    "</nav>" +
+    '<p class="footer-copy">&copy; ' +
+    year +
+    " ChessBird. All rights reserved.</p></div></footer>"
   );
 }
 
@@ -209,6 +226,19 @@ function ensureDocumentBaseAndAssets() {
     css.href = "css/style.css";
     document.head.appendChild(css);
   }
+  appendLinkOnce('link[rel="preconnect"][href="https://fonts.googleapis.com"]', {
+    rel: "preconnect",
+    href: "https://fonts.googleapis.com",
+  });
+  appendLinkOnce('link[rel="preconnect"][href="https://fonts.gstatic.com"]', {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+    crossorigin: "",
+  });
+  appendLinkOnce('link[href*="fonts.googleapis.com"]', {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap",
+  });
   appendLinkOnce("link[rel='icon'][sizes='any']", {
     rel: "icon",
     href: absoluteAsset("favicon.ico"),
@@ -239,6 +269,55 @@ function appendLinkOnce(selector, attrs) {
   document.head.appendChild(link);
 }
 
+function appendHeadScriptOnce(selector, attrs) {
+  if (document.querySelector(selector)) return;
+  var script = document.createElement("script");
+  Object.keys(attrs).forEach(function (key) {
+    script.setAttribute(key, attrs[key]);
+  });
+  document.head.appendChild(script);
+}
+
+/** Load site-config in <head>, then run callback (gtag-init depends on ChessBirdSite). */
+function whenSiteConfigReady(done) {
+  if (window.ChessBirdSite) {
+    done();
+    return;
+  }
+  var existing = document.querySelector('script[src*="site-config.js"]');
+  if (existing) {
+    existing.addEventListener("load", done, { once: true });
+    existing.addEventListener("error", done, { once: true });
+    return;
+  }
+  var script = document.createElement("script");
+  script.src = asset("js/site-config.js");
+  script.async = false;
+  script.addEventListener("load", done, { once: true });
+  script.addEventListener("error", done, { once: true });
+  document.head.appendChild(script);
+}
+
+function loadSiteScripts() {
+  whenSiteConfigReady(function () {
+    appendHeadScriptOnce('script[src*="gtag-init.js"]', { src: asset("js/gtag-init.js") });
+    appendScriptOnce('script[src*="analytics.js"]', { src: asset("js/analytics.js"), defer: true });
+  });
+}
+
+function appendScriptOnce(selector, attrs) {
+  if (document.querySelector(selector)) return;
+  var script = document.createElement("script");
+  Object.keys(attrs).forEach(function (key) {
+    if (key === "defer") {
+      script.defer = true;
+    } else {
+      script.setAttribute(key, attrs[key]);
+    }
+  });
+  document.body.appendChild(script);
+}
+
 function mountInviteOnShell(roomId) {
   ensureDocumentBaseAndAssets();
   if (!document.querySelector('meta[name="chessbird:room-id"]')) {
@@ -249,6 +328,7 @@ function mountInviteOnShell(roomId) {
   }
   document.body.innerHTML = inviteBodyMarkup(roomId);
   document.body.setAttribute("data-play-invite", roomId);
+  loadSiteScripts();
   loadInviteUiScript();
 }
 
@@ -281,7 +361,7 @@ function inviteBodyMarkup(roomId) {
     '<p class="play-invite__actions">' +
     '<a class="playstore-btn play-invite__cta" id="play-now" href="' +
     escapeAttr(playStore) +
-    '" rel="noopener noreferrer">Play Now</a>' +
+    '" rel="noopener noreferrer" data-analytics="hero_download">Play Now</a>' +
     "</p>" +
     "</div></section></main>" +
     siteFooter()
@@ -308,6 +388,9 @@ function renderInvitePage(roomId) {
     escapeAttr(roomId) +
     '">' +
     inviteBodyMarkup(roomId) +
+    '<script src="js/site-config.js"></script>' +
+    '<script src="js/gtag-init.js"></script>' +
+    '<script src="js/analytics.js" defer></script>' +
     '<script src="js/play-invite-ui.js" defer></script>' +
     "</body></html>"
   );
@@ -352,7 +435,7 @@ function renderNotFoundPage() {
     '<h1 class="not-found__title">This page isn\'t on the board</h1>' +
     '<p class="not-found__lede">The link may have moved, or something was mistyped along the way. No worries — you can step back to the homepage and pick up where you left off.</p>' +
     '<p class="not-found__actions"><a class="playstore-btn not-found__cta" href="index.html">Back to homepage</a></p>' +
-    '<div class="contact-panel not-found__panel" role="note"><p class="not-found__hint">Looking for something specific? Try <a href="index.html">Website</a>, <a href="contact.html">Contact Us</a>, <a href="privacy.html">Privacy Policy</a>, or <a href="terms.html">Terms of Service</a>.</p></div>' +
+    '<div class="contact-panel not-found__panel" role="note"><p class="not-found__hint">Looking for something specific? Try <a href="index.html">Home</a>, <a href="contact.html">Contact Us</a>, <a href="privacy.html">Privacy Policy</a>, or <a href="terms.html">Terms of Service</a>.</p></div>' +
     "</div></section></main>" +
     siteFooter() +
     "</body></html>"

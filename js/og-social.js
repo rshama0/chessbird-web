@@ -15,7 +15,7 @@
   var DEFAULT_TITLE = "Join a ChessBird game";
   var DEFAULT_DESCRIPTION =
     "Join a ChessBird chess room and play together with voice.";
-  var IMAGE_ALT = "ChessBird — social voice chess with friends, together.";
+  var IMAGE_ALT = "ChessBird — voice chess with friends, together.";
 
   function absoluteImageUrl() {
     if (typeof global.cbAsset === "function") {
