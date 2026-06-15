@@ -6,6 +6,10 @@
  * (body) on that shell, or replaces the full document for preview / other 404 paths.
  */
 (function () {
+  /** TODO(public-launch): set false when /play/:roomId should show the invite page again. */
+  var REDIRECT_PLAY_INVITES_TO_EARLY_ACCESS = true;
+  var EARLY_ACCESS_PAGE_PATH = "/early-access/";
+
   var pathMatch = /^\/play\/(\d{6})\/?$/i.exec(window.location.pathname);
   if (!pathMatch) {
     var previewRoom = new URLSearchParams(window.location.search).get("room");
@@ -14,6 +18,13 @@
     }
   }
   if (pathMatch) {
+    if (
+      REDIRECT_PLAY_INVITES_TO_EARLY_ACCESS &&
+      /^\/play\/\d{6}\/?$/i.test(window.location.pathname)
+    ) {
+      window.location.replace(EARLY_ACCESS_PAGE_PATH);
+      return;
+    }
     if (is404OgShell()) {
       mountInviteOnShell(pathMatch[1]);
     } else {
