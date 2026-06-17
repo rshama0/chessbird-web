@@ -43,6 +43,7 @@
     var image = absoluteImageUrl();
     global.document.title = title;
     setMetaContent('meta[name="description"]', DEFAULT_DESCRIPTION);
+    setMetaContent('meta[name="robots"]', "noindex, follow");
     setLinkHref('link[rel="canonical"]', pageUrl);
     setMetaContent('meta[property="og:url"]', pageUrl);
     setMetaContent('meta[property="og:title"]', title);

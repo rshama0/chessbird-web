@@ -115,6 +115,7 @@ function ogHeadBlock(opts) {
     '<meta name="description" content="' +
     description +
     '" />' +
+    '<meta name="robots" content="noindex, follow" />' +
     '<meta name="theme-color" content="#06050A" />' +
     '<link rel="preconnect" href="https://fonts.googleapis.com" />' +
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />' +
