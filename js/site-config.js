@@ -13,9 +13,4 @@ window.ChessBirdSite = Object.freeze({
   /** Microsoft Clarity project ID */
   clarityId: "",
   siteOrigin: "https://chessbird.app",
-  earlyAccessPageUrl: "/early-access/",
-  /** Early access (closed testing) — replace placeholders before sharing the page */
-  earlyAccessGoogleGroupUrl: "https://groups.google.com/g/chessbird-testers",
-  earlyAccessPlayStoreTestingUrl: "https://play.google.com/store/apps/details?id=com.chessbird.app",
-  earlyAccessFeedbackFormUrl: "https://forms.gle/sWtzzgWmTzGCbyZU7",
 });

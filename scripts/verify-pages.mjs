@@ -58,7 +58,6 @@ await new Promise((resolve) => server.listen(port, "127.0.0.1", resolve));
 
 const pages = [
   { path: "/", name: "home" },
-  { path: "/early-access/", name: "early-access" },
   { path: "/contact.html", name: "contact" },
   { path: "/play/123456", name: "play-invite" },
 ];

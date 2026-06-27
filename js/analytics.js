@@ -10,10 +10,6 @@
 
   /** data-analytics attribute value → GA4 recommended event name */
   var CTA_EVENT_MAP = {
-    join_early_access_click: "join_early_access",
-    early_access_join_tester_group: "join_google_group",
-    early_access_send_feedback: "feedback_form_open",
-    early_access_install_play: "play_store_click",
     footer_play_link: "play_store_click",
     hero_download: "play_store_click",
   };
@@ -49,9 +45,6 @@
     };
     if (eventName === "play_store_click") {
       params.link_url = href || cfg.playStoreUrl || "";
-    }
-    if (eventName === "feedback_form_open") {
-      params.form_type = "google_form";
     }
     return { eventName: eventName, params: params };
   }

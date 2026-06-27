@@ -6,10 +6,6 @@
  * (body) on that shell, or replaces the full document for preview / other 404 paths.
  */
 (function () {
-  /** TODO(public-launch): set false when /play/:roomId should show the invite page again. */
-  var REDIRECT_PLAY_INVITES_TO_EARLY_ACCESS = true;
-  var EARLY_ACCESS_PAGE_PATH = "/early-access/";
-
   var pathMatch = /^\/play\/(\d{6})\/?$/i.exec(window.location.pathname);
   if (!pathMatch) {
     var previewRoom = new URLSearchParams(window.location.search).get("room");
@@ -18,13 +14,6 @@
     }
   }
   if (pathMatch) {
-    if (
-      REDIRECT_PLAY_INVITES_TO_EARLY_ACCESS &&
-      /^\/play\/\d{6}\/?$/i.test(window.location.pathname)
-    ) {
-      window.location.replace(EARLY_ACCESS_PAGE_PATH);
-      return;
-    }
     if (is404OgShell()) {
       mountInviteOnShell(pathMatch[1]);
     } else {
@@ -201,7 +190,7 @@ function siteHeader() {
     '<a href="privacy.html">Privacy Policy</a>' +
     '<a href="terms.html">Terms of Service</a>' +
     '<a href="contact.html">Contact</a>' +
-    '<a class="site-nav__cta btn-play-store btn-play-store--compact" href="early-access/" data-analytics="join_early_access_click">Join Early Access</a>' +
+    '<a class="site-nav__cta btn-play-store btn-play-store--compact" href="https://play.google.com/store/apps/details?id=com.chessbird.app" target="_blank" rel="noopener noreferrer" data-analytics="hero_download" data-analytics-placement="nav">Download</a>' +
     "</nav></div></header>"
   );
 }
