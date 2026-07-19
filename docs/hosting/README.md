@@ -88,5 +88,5 @@ GitHub Pages runs **Jekyll** by default. Jekyll **does not publish** dot-directo
 
 ## Related
 
-- GitHub Pages workflow: `docs/github-pages/README.md`
+- Publishing (GitHub Pages): [../publishing/README.md](../publishing/README.md)
 - Domain/DNS: `docs/domain/README.md`
