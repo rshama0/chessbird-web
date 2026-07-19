@@ -60,6 +60,16 @@ function absoluteAsset(rel) {
   return new URL(String(rel || "").replace(/^\//, ""), siteBaseHref()).href;
 }
 
+function playStoreUrl() {
+  if (window.ChessBirdSite && window.ChessBirdSite.playStoreUrl) {
+    return String(window.ChessBirdSite.playStoreUrl);
+  }
+  return (
+    "https://play.google.com/store/apps/details?id=com.chessbird.app" +
+    "&utm_source=website&utm_medium=organic&utm_campaign=chessbird_web"
+  );
+}
+
 function escapeHtml(text) {
   return String(text)
     .replace(/&/g, "&amp;")
@@ -190,7 +200,9 @@ function siteHeader() {
     '<a href="privacy.html">Privacy Policy</a>' +
     '<a href="terms.html">Terms of Service</a>' +
     '<a href="contact.html">Contact</a>' +
-    '<a class="site-nav__cta btn-play-store btn-play-store--compact" href="https://play.google.com/store/apps/details?id=com.chessbird.app" target="_blank" rel="noopener noreferrer" data-analytics="hero_download" data-analytics-placement="nav">Download</a>' +
+    '<a class="site-nav__cta btn-play-store btn-play-store--compact" href="' +
+    escapeAttr(playStoreUrl()) +
+    '" data-play-store-link target="_blank" rel="noopener noreferrer" data-analytics="hero_download" data-analytics-placement="nav">Download</a>' +
     "</nav></div></header>"
   );
 }
@@ -207,7 +219,9 @@ function siteFooter() {
     '<a href="privacy.html">Privacy Policy</a>' +
     '<a href="terms.html">Terms of Service</a>' +
     '<a href="contact.html">Contact Us</a>' +
-    '<a href="https://play.google.com/store/apps/details?id=com.chessbird.app" target="_blank" rel="noopener noreferrer" data-analytics="footer_play_link">Google Play</a>' +
+    '<a href="' +
+    escapeAttr(playStoreUrl()) +
+    '" data-play-store-link target="_blank" rel="noopener noreferrer" data-analytics="footer_play_link">Google Play</a>' +
     "</nav>" +
     '<p class="footer-copy">&copy; ' +
     year +
@@ -343,8 +357,7 @@ function loadInviteUiScript() {
 
 function inviteBodyMarkup(roomId) {
   var roomDisplay = escapeHtml(roomId);
-  var playStore =
-    "https://play.google.com/store/apps/details?id=com.chessbird.app";
+  var playStore = playStoreUrl();
   return (
     siteHeader() +
     '<main class="legal-main" id="main-content">' +
@@ -362,7 +375,7 @@ function inviteBodyMarkup(roomId) {
     '<p class="play-invite__actions">' +
     '<a class="playstore-btn play-invite__cta" id="play-now" href="' +
     escapeAttr(playStore) +
-    '" rel="noopener noreferrer" data-analytics="hero_download">Play Now</a>' +
+    '" data-play-store-link rel="noopener noreferrer" data-analytics="hero_download">Play Now</a>' +
     "</p>" +
     "</div></section></main>" +
     siteFooter()
